@@ -14,7 +14,7 @@ class Program
     {
         string mapFile = $@"C:\Users\Adriana\Desktop\proiecte\OOP\mars-exploration-2-csharp-calinadriana\Codecool.MarsExploration.MapExplorer\Resources\exploration-0.map";
         Coordinate landingSpot = new Coordinate(6, 6);
-        List<string> resources = new List<string>() { "#", "&", "%", "*" };
+        List<string> resources = new List<string>() { "%", "*" };
         int NumberofSteps = 1000; 
         MapLoader.MapLoader mapLoader = new MapLoader.MapLoader();
         Rover rover = new Rover();
@@ -27,9 +27,7 @@ class Program
             new ExplorationSimulator(validate, rover, logger, mapLoader, placeRover, config);
         
         simulator.Run(10);
-        Console.WriteLine("ceva");
-        //SimulationContext context =
-        //new SimulationContext(0, NumberofSteps, rover, landingSpot, mapLoader.Load(mapFile), resources, outcome, 10);
-
+        
+        
     }
 }

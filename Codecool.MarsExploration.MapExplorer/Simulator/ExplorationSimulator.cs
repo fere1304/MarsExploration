@@ -64,8 +64,8 @@ public class ExplorationSimulator
         {
             Scan(simulationContext);
             Move(simulationContext);
-            Log(simulationContext);
             Analizyz(simulationContext);
+            Log(simulationContext);
             simulationContext.NumberOfSteps++;
 
 
@@ -85,7 +85,6 @@ public class ExplorationSimulator
                 var coord = new Coordinate(i, j);
                 if (i >= 0 && i < simulationContext.map.Dimension && j >= 0 && j < simulationContext.map.Dimension  && simulationContext.map.Representation[i, j] == " " && !ExploredArea.Contains(coord))
                 {
-                    Console.WriteLine(PossibletoMove.Count);
                     PossibletoMove.Add(coord);
                     ExploredArea.Add(coord);
 
@@ -103,7 +102,7 @@ public class ExplorationSimulator
         }
 
         
-        Console.WriteLine(rover.CurrentPosition);
+
 
 
 
@@ -158,7 +157,7 @@ public class ExplorationSimulator
     private void Log(SimulationContext simulationContext)
     {
         Console.WriteLine($"STEP {simulationContext.NumberOfSteps}; EVENT {simulationContext.OutCome}; UNIT {rover.Id}; POSITION {rover.CurrentPosition}. Found {rover.Resources.Count} resources out of{simulationContext.NecesaryRes}");
-        logger.Log($"STEP {simulationContext.NumberOfSteps}; EVENT {simulationContext.OutCome}; UNIT {rover.Id}; POSITION {rover.CurrentPosition}");
+        logger.Log($"STEP {simulationContext.NumberOfSteps}; EVENT {simulationContext.OutCome}; UNIT {rover.Id}; POSITION {rover.CurrentPosition}. Found {rover.Resources.Count} resources out of{simulationContext.NecesaryRes}");
         
     }
 
